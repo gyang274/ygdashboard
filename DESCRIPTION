@@ -1,0 +1,21 @@
+Package: ygdashboard
+Title: Create Dashboards with 'Shiny' and 'adminLTE'.
+Version: 0.5.1.9000
+Author@R: c(
+    person("Guang", "Yang", role = c("aut", "cre"), email = "gyang274@gmail.com"),
+    person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"),
+    person(family = "RStudio", role = "cph"),
+    person(family = "Almasaeed Studio", role = c("ctb", "cph"), comment = "AdminLTE theme for Bootstrap"),
+    person(family = "Adobe Systems Incorporated", role = c("ctb", "cph"), comment = "Source Sans Pro font")
+    )
+Description: A modified shinydashboard to incorporate more functionality from adminLTE.
+License: GPL-2 | file LICENSE
+Depends:
+    R (>= 3.0)
+Imports:
+    utils,
+    shiny (>= 0.12.1),
+    htmltools (>= 0.2.6)
+URL: https://github.com/gyang274/ygdashboard
+BugReports: https://github.com/gyang274/ygdashboard/issues
+RoxygenNote: 5.0.1
