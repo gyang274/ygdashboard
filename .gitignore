@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+*.sublime-*
+.*.Rnb.cached
+app
+mat
+wfx

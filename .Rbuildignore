@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^tools$
+^tests-manual$
+^\.travis\.yml$
+^app$
+^mat$
+^wfx$
