@@ -33,7 +33,8 @@ main box content, often structures as an \code{timelineLabel} follows several
 \code{\link{box}} for usage examples.
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
-  \code{\link{chatBox}}, \code{\link{infoBox}},
-  \code{\link{tabBox}}, \code{\link{valueBox}}
+  \code{\link{carouselBox}}, \code{\link{chatBox}},
+  \code{\link{infoBox}}, \code{\link{tabBox}},
+  \code{\link{valueBox}}
 }
 

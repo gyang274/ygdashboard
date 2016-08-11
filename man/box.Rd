@@ -169,8 +169,8 @@ shinyApp(
 }
 \seealso{
 Other boxes: \code{\link{calendarBox}},
-  \code{\link{chatBox}}, \code{\link{infoBox}},
-  \code{\link{tabBox}}, \code{\link{timelineBox}},
-  \code{\link{valueBox}}
+  \code{\link{carouselBox}}, \code{\link{chatBox}},
+  \code{\link{infoBox}}, \code{\link{tabBox}},
+  \code{\link{timelineBox}}, \code{\link{valueBox}}
 }
 

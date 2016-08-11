@@ -62,7 +62,7 @@ A modified shinydashboard to incorporate more functionality from adminLTE:
 
     -   Add `sidebarUserPanelOutput()` in menuOutput.R as client-side place holder, use in context with server-side dynamically generated `renderMenu({ sidebarUserPanel() })`.
 
-    -   Add `style="background-color:transparent"` in `div(class = "user-panel", ..., div(class = "pull-left info", ...))` in `sidebarUserPanel()` - in case otherwise when work with leaflet package, background is overwritten by leafletfix.css:8.
+    -   Add `style="background-color:transparent;"` in `div(class = "user-panel", ..., div(class = "pull-left info", ...))` in `sidebarUserPanel()` - in case otherwise when work with leaflet package, background is overwritten by leafletfix.css:8.
 
 -   A modified dashboardSidebar.R:
 

@@ -2,6 +2,9 @@
 
 export(box)
 export(calendarBox)
+export(carouselBox)
+export(carouselItem)
+export(carouselSets)
 export(chatBox)
 export(chatContact)
 export(chatContactList)

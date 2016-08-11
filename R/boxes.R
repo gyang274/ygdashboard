@@ -1037,3 +1037,122 @@ timelineItem <- function(icon = shiny::icon("bars bg-blue"),
   )
 
 }
+
+
+#' Create a carousel box for the main body of a dashboard.
+#'
+#' A \code{carouseleBox} displays \code{carouselSets} and \code{carouselItem} as
+#' main box content, often structures as an \code{carouselSets} follows several
+#' \code{carouselItem}s.
+#'
+#' @inheritParams box
+#' @param ... For carousel items, this may consist of \code{\link{carouselSets}}s,
+#'   which in turn includes one or more \code{\link{carouselItem}}s.
+#' @param .list An optional list containing items to put in the carousel same as
+#'   the \code{...} arguments, but in list format. This can be useful when working
+#'   with programmatically generated items.
+#'
+#' @family boxes
+#' @seealso \code{\link{box}} for usage examples.
+#'
+#' @rdname carouselBox
+#' @export
+carouselBox <- box
+
+#' @rdname carouselBox
+#' @export
+carouselSets <- function(..., id = NULL, class = NULL, itemStartWith = 1L, .list = NULL) {
+
+  if (is.null(id)) id <- paste0("carousel-generic", "-", sample(1000L, 1L))
+
+  items <- c(list(...), .list)
+
+  n <- max(1L, length(items))
+
+  if (itemStartWith > n) itemStartWith <- 1L
+
+  if ( n == 1L ) {
+
+    items[["attribs"]][["class"]] <- paste0(items[["attribs"]][["class"]], " active")
+
+  } else {
+
+    items[[itemStartWith]][["attribs"]][["class"]] <- paste0(items[[itemStartWith]][["attribs"]][["class"]], " active")
+
+  }
+
+  tags$div(
+
+    id = id,
+
+    class = "carousel slide",
+
+    class = if (!is.null(class)) class,
+
+    `data-ride`="carousel",
+
+    eval(parse(text = paste0(
+      'tags$ol(class = "carousel-indicators",', paste0('tags$li(`data-target` = paste0("#", id), `data-slide-to` = "', c(1L:n) - 1L, '", class="', ifelse(c(1L:n) == itemStartWith, "active", ""), '")', collapse = ", "), ")"
+    ))),
+
+    tags$div(
+
+      class = "carousel-inner",
+
+      items
+
+    ),
+
+    tags$a(
+
+      class = "left carousel-control",
+
+      href = paste0("#", id),
+
+      `data-slide` = "prev",
+
+      tags$span(
+
+        class = "fa fa-angle-left"
+
+      )
+
+    ),
+
+    tags$a(
+
+      class = "right carousel-control",
+
+      href = paste0("#", id),
+
+      `data-slide` = "next",
+
+      tags$span(
+
+        class = "fa fa-angle-right"
+
+      )
+
+    )
+
+  )
+
+}
+
+#' @rdname carouselBox
+#' @export
+carouselItem <- function(..., caption = NULL, .list = NULL) {
+
+  items <- c(list(...), .list)
+
+  tags$div(
+
+    class = "item",
+
+    items,
+
+    if (!is.null(caption)) tags$div(class = "carousel-caption", caption)
+
+  )
+
+}

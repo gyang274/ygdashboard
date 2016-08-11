@@ -43,7 +43,8 @@ boxes are meant to be placed in the main body of a dashboard.
 \code{\link{box}} for usage examples.
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
-  \code{\link{chatBox}}, \code{\link{tabBox}},
-  \code{\link{timelineBox}}, \code{\link{valueBox}}
+  \code{\link{carouselBox}}, \code{\link{chatBox}},
+  \code{\link{tabBox}}, \code{\link{timelineBox}},
+  \code{\link{valueBox}}
 }
 

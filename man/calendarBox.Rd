@@ -43,8 +43,9 @@ dashboard.
 \seealso{
 \code{\link{box}} for usage examples.
 
-Other boxes: \code{\link{box}}, \code{\link{chatBox}},
-  \code{\link{infoBox}}, \code{\link{tabBox}},
-  \code{\link{timelineBox}}, \code{\link{valueBox}}
+Other boxes: \code{\link{box}}, \code{\link{carouselBox}},
+  \code{\link{chatBox}}, \code{\link{infoBox}},
+  \code{\link{tabBox}}, \code{\link{timelineBox}},
+  \code{\link{valueBox}}
 }
 
