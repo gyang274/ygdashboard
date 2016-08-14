@@ -1092,7 +1092,16 @@ carouselSets <- function(..., id = NULL, class = NULL, itemStartWith = 1L, .list
     `data-ride`="carousel",
 
     eval(parse(text = paste0(
-      'tags$ol(class = "carousel-indicators",', paste0('tags$li(`data-target` = paste0("#", id), `data-slide-to` = "', c(1L:n) - 1L, '", class="', ifelse(c(1L:n) == itemStartWith, "active", ""), '")', collapse = ", "), ")"
+      'tags$ol(',
+        'class = "nav carousel-indicators shiny-carousel-input shiny-bound-input",',
+        paste0(
+        'tags$li(',
+          '`data-target`=paste0("#", id), `data-slide-to`="', c(1L:n) - 1L, '", ',
+          'class="', ifelse(c(1L:n) == itemStartWith, "active", ""), '"',
+        ')',
+        collapse = ", "
+        ),
+      ")"
     ))),
 
     tags$div(

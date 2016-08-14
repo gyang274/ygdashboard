@@ -4,13 +4,13 @@ output:
     variant: markdown_github
 ---
 
-<!-- README.md is generated from README.Rmd. -->
+<!-- NEWS.md is generated from NEWS.Rmd. -->
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "NEWS-"
 )
 ```
 
