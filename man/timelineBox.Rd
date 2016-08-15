@@ -34,7 +34,7 @@ main box content, often structures as an \code{timelineLabel} follows several
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
   \code{\link{carouselBox}}, \code{\link{chatBox}},
-  \code{\link{infoBox}}, \code{\link{tabBox}},
-  \code{\link{valueBox}}
+  \code{\link{infoBox}}, \code{\link{socialWigetBox}},
+  \code{\link{tabBox}}, \code{\link{valueBox}}
 }
 

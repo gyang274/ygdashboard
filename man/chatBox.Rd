@@ -65,7 +65,7 @@ Create a chat contact list for the chat box header.
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
   \code{\link{carouselBox}}, \code{\link{infoBox}},
-  \code{\link{tabBox}}, \code{\link{timelineBox}},
-  \code{\link{valueBox}}
+  \code{\link{socialWigetBox}}, \code{\link{tabBox}},
+  \code{\link{timelineBox}}, \code{\link{valueBox}}
 }
 

@@ -808,55 +808,58 @@ chatBox <- function(..., textInputId, btnInputId, placeholder = "Type Message ..
   #   '))
 
   tags$div(
-    class=boxClass,
-    # <!-- /.box-header -->
+    class = if (!is.null(width)) paste0("col-sm-", width),
     tags$div(
-      class="box-header with-border",
-      h3(class="box-title", title),
+      class=boxClass,
+      # <!-- /.box-header -->
       tags$div(
-        class="box-tools pull-right",
-        if (!is.null(newMessage)) tags$span(`data-toggle`="tooltip", title=paste0(newMessage, "New Messages"), class="badge bg-yellow", newMessage),
-        tags$button(
-          type="button", class="btn btn-box-tool", `data-widget`="collapse", shiny::icon("minus")
-        ),
-        tags$button(
-          type="button", class="btn btn-box-tool", `data-toggle`="tooltip", title="Contacts", `data-widget`="chat-pane-toggle", shiny::icon("comments")
-        ),
-        tags$button(
-          type="button", class="btn btn-box-tool", `data-widget`="remove", shiny::icon("times")
-        )
-      )
-    ),
-    # <!-- /.box-body -->
-    tags$div(
-      class="box-body",
-      # <!--/.direct-chat-messages-->
-      tags$div(
-        class="direct-chat-messages",
-        ...
-      ),
-      # <!--/.direct-chat-contacts-->
-      tags$div(
-        class="direct-chat-contacts",
-        contactList
-      )
-    ),
-    # <!-- /.box-footer -->
-    # create input as a shiny textInput ...
-    tags$div(
-      class="box-footer",
-      tags$form(
-        action="#", method="post"
-      ),
-      tags$div(
-        class = "input-group form-group shiny-input-container", style="width:100%",
-        # style = if (!is.null(width)) paste0("width: ", validateCssUnit(width), ";"),
-        tags$input(
-          id = textInputId, type="text", class="form-control", placeholder = placeholder),
-        tags$span(
-          class="input-group-btn",
+        class="box-header with-border",
+        h3(class="box-title", title),
+        tags$div(
+          class="box-tools pull-right",
+          if (!is.null(newMessage)) tags$span(`data-toggle`="tooltip", title=paste0(newMessage, "New Messages"), class="badge bg-yellow", newMessage),
           tags$button(
-            id = btnInputId, class=paste0("btn btn-", status, " btn-flat action-button"), "Send"
+            type="button", class="btn btn-box-tool", `data-widget`="collapse", shiny::icon("minus")
+          ),
+          tags$button(
+            type="button", class="btn btn-box-tool", `data-toggle`="tooltip", title="Contacts", `data-widget`="chat-pane-toggle", shiny::icon("comments")
+          ),
+          tags$button(
+            type="button", class="btn btn-box-tool", `data-widget`="remove", shiny::icon("times")
+          )
+        )
+      ),
+      # <!-- /.box-body -->
+      tags$div(
+        class="box-body",
+        # <!--/.direct-chat-messages-->
+        tags$div(
+          class="direct-chat-messages",
+          ...
+        ),
+        # <!--/.direct-chat-contacts-->
+        tags$div(
+          class="direct-chat-contacts",
+          contactList
+        )
+      ),
+      # <!-- /.box-footer -->
+      # create input as a shiny textInput ...
+      tags$div(
+        class="box-footer",
+        tags$form(
+          action="#", method="post"
+        ),
+        tags$div(
+          class = "input-group form-group shiny-input-container", style="width:100%",
+          # style = if (!is.null(width)) paste0("width: ", validateCssUnit(width), ";"),
+          tags$input(
+            id = textInputId, type="text", class="form-control", placeholder = placeholder),
+          tags$span(
+            class="input-group-btn",
+            tags$button(
+              id = btnInputId, class=paste0("btn btn-", status, " btn-flat action-button"), "Send"
+            )
           )
         )
       )
@@ -1161,6 +1164,137 @@ carouselItem <- function(..., caption = NULL, .list = NULL) {
     items,
 
     if (!is.null(caption)) tags$div(class = "carousel-caption", caption)
+
+  )
+
+}
+
+
+#' Create a socialWidgetBox box for the main body of a dashboard.
+#'
+#' A \code{socialWidgetBox} as a specialized box that can be used to hold
+#' content in the main body of a dashboard.
+#'
+#' @inheritParams box
+#' @param ... Contents of the box.
+#'
+#' @family boxes
+#' @seealso \code{\link{box}} for usage examples.
+#'
+#' @rdname socialWidgetBox
+#' @export
+socialWigetBox <- function(
+  ..., name = NULL, image = NULL, description = NULL,
+  stat1 = NULL, subStat1 = NULL,
+  stat2 = NULL, subStat2 = NULL,
+  stat3 = NULL, subStat3 = NULL,
+  background = NULL, backgroundImage = NULL,
+  width = 6, height = NULL,
+  collapsible = FALSE, collapsed = FALSE
+) {
+
+  tags$div(
+
+    class = if (!is.null(width)) paste0("col-sm-", width),
+
+    #- social widget style 1 box
+    tags$div(
+
+      class = "box box-widget widget-user",
+
+      #- header
+      tags$div(
+
+        class = "widget-user-header",
+
+        class = if (!is.null(background)) paste0("bg-", background),
+
+        style = if (!is.null(backgroundImage)) paste0("background: url('", backgroundImage, "') center center;"),
+
+        h3(class = "widget-user-username", name),
+
+        h5(class = "widget-user-desc", description)
+
+      ),
+
+      #- image
+      tags$div(
+
+        class = "widget-user-image",
+
+        tags$img(class = "img-circle", src = image, alt = "User Image")
+
+      ),
+
+      #- footer
+      tags$div(
+
+        class = "box-footer",
+
+        tags$div(
+
+          class = "row",
+
+          tags$div(
+
+            class = "col-sm-4 border-right",
+
+            tags$div(
+
+              class = "description-block",
+
+              h5(class = "description-header", stat1),
+
+              span(class="description-text", subStat1)
+
+            )
+
+          ),
+
+          tags$div(
+
+            class = "col-sm-4 border-right",
+
+            tags$div(
+
+              class = "description-block",
+
+              h5(class = "description-header", stat2),
+
+              span(class="description-text", subStat2)
+
+            )
+
+          ),
+
+          tags$div(
+
+            class = "col-sm-4",
+
+            tags$div(
+
+              class = "description-block",
+
+              h5(class = "description-header", stat3),
+
+              span(class="description-text", subStat3)
+
+            )
+
+          )
+
+        )
+
+      ),
+
+      #- main body
+      tags$div(
+
+        class = "box-body", ...
+
+      )
+
+    )
 
   )
 

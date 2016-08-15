@@ -44,7 +44,7 @@ boxes are meant to be placed in the main body of a dashboard.
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
   \code{\link{carouselBox}}, \code{\link{chatBox}},
-  \code{\link{tabBox}}, \code{\link{timelineBox}},
-  \code{\link{valueBox}}
+  \code{\link{socialWigetBox}}, \code{\link{tabBox}},
+  \code{\link{timelineBox}}, \code{\link{valueBox}}
 }
 

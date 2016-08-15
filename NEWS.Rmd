@@ -16,6 +16,11 @@ knitr::opts_chunk$set(
 
 ## ygdashboard
 
+### 2016.08.10
+
+Add `socialWigetBox()` in `boxes.R`.
+
 ### 2016.08.08
 
 Add `carouselBox()`, `carouselSets()`, `carouselItem()` in `boxes.R`.
+

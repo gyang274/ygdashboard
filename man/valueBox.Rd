@@ -35,7 +35,7 @@ to be placed in the main body of a dashboard.
 
 Other boxes: \code{\link{box}}, \code{\link{calendarBox}},
   \code{\link{carouselBox}}, \code{\link{chatBox}},
-  \code{\link{infoBox}}, \code{\link{tabBox}},
-  \code{\link{timelineBox}}
+  \code{\link{infoBox}}, \code{\link{socialWigetBox}},
+  \code{\link{tabBox}}, \code{\link{timelineBox}}
 }
 
