@@ -1,6 +1,10 @@
-<!-- README.md is generated from README.Rmd. -->
+<!-- NEWS.md is generated from NEWS.Rmd. -->
 ygdashboard
 -----------
+
+### 2016.08.10
+
+Add `socialWigetBox()` in `boxes.R`.
 
 ### 2016.08.08
 
