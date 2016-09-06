@@ -1197,6 +1197,8 @@ socialWigetBox <- function(
 
     class = if (!is.null(width)) paste0("col-sm-", width),
 
+    style = if (!is.null(height)) paste0("height: ", validateCssUnit(height)),
+
     #- social widget style 1 box
     tags$div(
 

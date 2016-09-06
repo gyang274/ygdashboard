@@ -19,9 +19,11 @@
 #' library(shiny)
 #' shinyApp(
 #'   ui = dashboardPage(
-#'     dashboardHeader(),
-#'     dashboardSidebar(),
-#'     dashboardBody(),
+#'     header = dashboardHeader(),
+#'     sidebar = dashboardSidebar(),
+#'     body = dashboardBody(),
+#'     footer = dashboardFooter(),
+#'     controlbar = dashboardControlbar(),
 #'     title = "Dashboard example"
 #'   ),
 #'   server = function(input, output) { }
