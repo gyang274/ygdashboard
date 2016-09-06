@@ -5,6 +5,8 @@
 #' @param header A header created by \code{dashboardHeader}.
 #' @param sidebar A sidebar created by \code{dashboardSidebar}.
 #' @param body A body created by \code{dashboardBody}.
+#' @param footer A footer created by \code{dashboardFooter}.
+#' @param controlbar A controlbar created by \code{dashboardControlbar}.
 #' @param title A title to display in the browser's title bar. If no value is
 #'   provided, it will try to extract the title from the \code{dashboardHeader}.
 #' @param skin A color theme. One of \code{"blue"}, \code{"black"},

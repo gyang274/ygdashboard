@@ -14,6 +14,10 @@ dashboardPage(header, sidebar, body, footer, controlbar, title = NULL,
 
 \item{body}{A body created by \code{dashboardBody}.}
 
+\item{footer}{A footer created by \code{dashboardFooter}.}
+
+\item{controlbar}{A controlbar created by \code{dashboardControlbar}.}
+
 \item{title}{A title to display in the browser's title bar. If no value is
 provided, it will try to extract the title from the \code{dashboardHeader}.}
 
