@@ -16,4 +16,6 @@ ygdashboard
 
 -   grey: \#d2d6de
 
+-   oragne: \#ffaf16
+
 -   purple: \#605ca8
