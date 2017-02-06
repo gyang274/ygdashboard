@@ -106,11 +106,11 @@ dashboardUser <- function(name = "Guang Yang",
         class="user-footer",
         tags$div(
           class="pull-left",
-          tags$a(href="#", class="btn btn-default btn-flat", btn1)
+          tags$a(id="left-uid-button",href="#", class="btn btn-default btn-flat", btn1)
         ),
         tags$div(
           class="pull-right",
-          tags$a(href="#", class="btn btn-default btn-flat", btn2)
+          tags$a(id="right-uid-button",href="#", class="btn btn-default btn-flat", btn2)
         )
       )
     )
