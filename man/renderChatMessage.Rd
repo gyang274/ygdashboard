@@ -29,4 +29,3 @@ Create dynamic chat message output (server side)
 
 Other box outputs: \code{\link{chatMessageOutput}}
 }
-
