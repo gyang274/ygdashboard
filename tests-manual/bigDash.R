@@ -1,7 +1,8 @@
 ## This tries to render a dashboard with many different components, incl. sidebar, dropdown menus etc.
 
 library(shiny)
-library(shinydashboard)
+##library(shinydashboard)
+library(ygdashboard)
 
 header <- dashboardHeader(
   title = "Dashboard Demo",
@@ -20,6 +21,7 @@ header <- dashboardHeader(
                 "Can I get some help?",
                 time = "Today")
   ),
+
 
   # Dropdown menu for notifications
   dropdownMenu(
@@ -61,6 +63,7 @@ header <- dashboardHeader(
              "Write documentation")
   )
 )
+
 sidebar <- dashboardSidebar(
   sidebarUserPanel(
     "User Name",
@@ -201,6 +204,7 @@ body <- dashboardBody(tabItems(
       textOutput("status")
     ),
 
+
     # Box with HTML output, when finer control over appearance is needed
     box(
       title = "Status summary 2",
@@ -242,8 +246,18 @@ body <- dashboardBody(tabItems(
       ),
       tabPanel("Tab2", "Tab content 2")
     )
-  )
 
+  ),
+
+    fluidRow(
+    box(kpi_table_box("kpi_table_box"))
+
+    ,box(kpi_metric_box("kpi_metric_box"))
+    ),
+
+    fluidRow(
+    box(measure_box_tabular_UI("dashboard","measure_box_tabular_UI",12))
+    )
 )
 
 server <- function(input, output) {
@@ -306,6 +320,8 @@ server <- function(input, output) {
 
 ui <- dashboardPage(header,
                     sidebar,
-                    body)
+                    body,footer = dashboardFooter(),controlbar = dashboardControlbar()
+                    )
+
 
 shinyApp(ui, server)

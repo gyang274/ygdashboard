@@ -120,7 +120,7 @@ dashboardHeader <- function(..., title = NULL, titleWidth = NULL, user = NULL, d
       # Embed hidden icon so that we get the font-awesome dependency
       span(shiny::icon("bars"), style = "display:none;"),
       # Sidebar toggle button
-      a(href="#", class="sidebar-toggle", `data-toggle`="offcanvas",
+      a(href="#",id="sbtoggle", class="sidebar-toggle", `data-toggle`="offcanvas",
         role="button",
         span(class="sr-only", "Toggle navigation")
       ),
