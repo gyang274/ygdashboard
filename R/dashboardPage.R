@@ -33,7 +33,9 @@
 #' }
 #' @export
 dashboardPage <- function(header, sidebar, body, footer, controlbar, title = NULL,
-                          skin = c("blue", "black", "purple", "green", "red", "yellow")) {
+                          skin = c("blue", "blue-light","black","black-light", "purple","purple-light", "green","green-light",
+                                   "red","red-light", "yellow","yellow-light"),
+                          collapse_sidebar = FALSE) {
 
   tagAssert(header, type = "header", class = "main-header")
   tagAssert(sidebar, type = "aside", class = "main-sidebar")
@@ -63,7 +65,7 @@ dashboardPage <- function(header, sidebar, body, footer, controlbar, title = NUL
   addDeps(
 
     tags$body(
-      class = paste0("hold-transition skin-", skin, " sidebar-mini"),
+      class = paste0("hold-transition skin-", skin, " sidebar-mini",ifelse(collapse_sidebar," sidebar-collapse","")),
       style = "min-height: 611px;",
       shiny::bootstrapPage(content, title = title)#,
       # add adminLTE scripts at the end of body

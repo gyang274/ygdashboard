@@ -5,7 +5,9 @@
 \title{yg dashboard page}
 \usage{
 dashboardPage(header, sidebar, body, footer, controlbar, title = NULL,
-  skin = c("blue", "black", "purple", "green", "red", "yellow"))
+  skin = c("blue", "blue-light", "black", "black-light", "purple",
+  "purple-light", "green", "green-light", "red", "red-light", "yellow",
+  "yellow-light"))
 }
 \arguments{
 \item{header}{A header created by \code{dashboardHeader}.}
